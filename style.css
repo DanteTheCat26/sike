@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: #1a1a1a;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    border-bottom: 3px solid #ff6b6b;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-right: 2px solid #ff6b6b;
+    padding-right: 20px;
+    margin-right: 20px;
+}
+
+.site-title {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.main-wrapper {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.left-menu {
+    width: 250px;
+    flex-shrink: 0;
+    background: #f4f4f4;
+    border-right: 1px solid #ddd;
+    padding: 25px 20px;
+}
+
+.left-menu ul { list-style: none; }
+.left-menu li { margin-bottom: 15px; }
+.left-menu a { text-decoration: none; color: #333; font-weight: 600; }
+.left-menu a:hover { color: #ff6b6b; }
+
+.content-area {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.text-container {
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+}
+
+/* ХЛЕБНЫЕ КРОШКИ */
+.breadcrumbs {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.breadcrumbs a {
+    color: #ff6b6b;
+    text-decoration: none;
+}
+
+.content-area h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+}
+
+.text-p1 { font-size: 1.15rem; margin-bottom: 18px; }
+.text-p3 { font-weight: bold; color: #ff6b6b; margin-bottom: 18px; }
+
+/* СТИЛЬ ДЛЯ МЕМОВ */
+.meme-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 30px auto 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.right-nav {
+    width: 280px;
+    flex-shrink: 0;
+    background: #fafafa;
+    border-left: 1px solid #ddd;
+    padding: 25px 20px;
+}
+
+.right-nav h3 {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.right-nav ul { list-style: none; }
+.right-nav li { margin-bottom: 10px; }
+.right-nav a { text-decoration: none; color: #444; font-size: 0.9rem; }
+.right-nav a:hover { text-decoration: underline; }
+
+footer {
+    background: #1a1a1a;
+    color: #888;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+    .main-wrapper { flex-direction: column; }
+    .left-menu, .right-nav { width: 100%; border: none; }
+    .left-menu { order: 2; }
+    .content-area { order: 1; }
+    .right-nav { order: 3; }
+}
