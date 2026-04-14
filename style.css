@@ -15,35 +15,52 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 60px;
+    padding-top: 80px;
 }
 
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 60px;
+    height: 80px;
     background: #1a1a1a;
     color: white;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 0;
     z-index: 1000;
     border-bottom: 3px solid #ff6b6b;
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-    border-right: 2px solid #ff6b6b;
-    padding-right: 20px;
-    margin-right: 20px;
+.logo-link {
+    width: 250px;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+    margin-right: 0;
+    border-right: none;
+    text-decoration: none;
+    background: #1a1a1a;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    filter: invert(1);
+    mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
 }
 
 .site-title {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    padding-left: 20px;
 }
 
 .main-wrapper {
@@ -99,6 +116,76 @@ header {
 .text-p1 { font-size: 1.15rem; margin-bottom: 18px; }
 .text-p3 { font-weight: bold; color: #ff6b6b; margin-bottom: 18px; }
 
+/* === СЕМАНТИЧЕСКИЕ СТИЛИ ТЕКСТА === */
+
+/* Термин — ключевое понятие */
+.term {
+    font-style: italic;
+    color: #c97a7a;
+}
+
+/* Важно — ключевой момент, выделяется цветом */
+.important {
+    color: #7b5ea7;
+    border-left: 3px solid #c4a8e0;
+    padding-left: 10px;
+}
+
+/* Ссылка — внутренняя перекрёстная ссылка */
+.ref {
+    color: #c97a7a;
+    text-decoration: none;
+    border-bottom: 1px dotted #c97a7a;
+}
+.ref:hover {
+    border-bottom-style: solid;
+}
+
+/* Внешняя ссылка — на другие ресурсы */
+.ext {
+    color: #6b9ed6;
+    text-decoration: none;
+    border-bottom: 1px dotted #6b9ed6;
+}
+.ext:hover {
+    border-bottom-style: solid;
+}
+
+/* Цитата — блок-цитата */
+.quote {
+    display: block;
+    margin: 20px 0;
+    padding: 10px 15px;
+    border-left: 2px solid #ddd;
+    font-style: italic;
+    color: #777;
+}
+
+/* Примечание — дополнительная информация */
+.note {
+    display: block;
+    margin: 20px 0;
+    padding: 10px 15px;
+    border-left: 2px solid #a8c686;
+    color: #6b8f5e;
+    font-style: italic;
+}
+
+/* Предупреждение — важное замечание */
+.warning {
+    color: #b07d3a;
+    text-decoration: underline;
+    text-decoration-color: #b07d3a;
+    text-decoration-thickness: 1px;
+}
+
+/* СНОСКА */
+.footnote {
+    color: #888;
+    vertical-align: super;
+    font-size: inherit;
+}
+
 /* СТИЛЬ ДЛЯ МЕМОВ */
 .meme-img {
     max-width: 100%;
@@ -133,7 +220,7 @@ footer {
     background: #1a1a1a;
     color: #888;
     text-align: center;
-    padding: 25px;
+    padding: 15px;
     font-size: 0.85rem;
 }
 
